@@ -5,46 +5,236 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
+<!-- ============ HERO ============ -->
+<section class='hero'>
+	<div class='container hero-grid'>
+		<div class='hero-copy'>
+			<p class='eyebrow'>Est. 2019 · Grown with care</p>
+			<h1>Bring the <em>quiet</em> of the garden indoors.</h1>
+			<p class='lead'>
+				A small studio shop of hand-selected houseplants, handmade pots and
+				everything they need to thrive. Delivered rooted, healthy and ready.
 			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
+			<div class='hero-actions'>
+				<a href='#collection' class='btn'>Explore the collection</a>
+				<a href='#care' class='btn btn-ghost'>Care guide</a>
+			</div>
+			<ul class='hero-facts'>
+				<li><strong>120+</strong><span>Varieties</span></li>
+				<li><strong>30 days</strong><span>Plant guarantee</span></li>
+				<li><strong>Local</strong><span>Next-day delivery</span></li>
 			</ul>
+		</div>
+
+		<!-- IMAGE PLACEHOLDER — replace src with your hero photo (recommended 1200×1500) -->
+		<figure class='hero-image ph ph-portrait'>
+			<img
+				src='images/hero-plant.jpg'
+				alt='Monstera leaf in a ceramic pot'
+				loading='eager'
+			/>
+			<figcaption class='ph-label'>1200 × 1500 — hero</figcaption>
+		</figure>
+	</div>
+</section>
+
+<!-- ============ MARQUEE / VALUES ============ -->
+<section class='strip'>
+	<div class='container strip-inner'>
+		<span>Peat-free soil</span>
+		<span>Plastic-free packaging</span>
+		<span>Grown in our own nursery</span>
+		<span>Free repotting service</span>
+	</div>
+</section>
+
+<!-- ============ COLLECTION ============ -->
+<section id='collection' class='section'>
+	<div class='container'>
+		<header class='section-head'>
+			<p class='eyebrow'>The collection</p>
+			<h2>Plants chosen for real homes</h2>
+			<p class='section-sub'>
+				Low-fuss favourites and a few rare finds — each one raised in our
+				nursery and matched to the light you actually have.
+			</p>
+		</header>
+
+		<div class='cards'>
+			<article class='card'>
+				<!-- IMAGE PLACEHOLDER — 800×900 -->
+				<figure class='ph ph-square'>
+					<img
+						src='images/plant-1.jpg'
+						alt='Monstera Deliciosa'
+						loading='lazy'
+					/>
+					<figcaption class='ph-label'>800 × 900</figcaption>
+				</figure>
+				<div class='card-body'>
+					<h3>Monstera Deliciosa</h3>
+					<p>Bright indirect light · Easy</p>
+					<p class='price'>€38</p>
+				</div>
+			</article>
+
+			<article class='card'>
+				<!-- IMAGE PLACEHOLDER — 800×900 -->
+				<figure class='ph ph-square'>
+					<img src='images/plant-2.jpg' alt='Fiddle Leaf Fig' loading='lazy' />
+					<figcaption class='ph-label'>800 × 900</figcaption>
+				</figure>
+				<div class='card-body'>
+					<h3>Fiddle Leaf Fig</h3>
+					<p>Bright light · Moderate</p>
+					<p class='price'>€54</p>
+				</div>
+			</article>
+
+			<article class='card'>
+				<!-- IMAGE PLACEHOLDER — 800×900 -->
+				<figure class='ph ph-square'>
+					<img src='images/plant-3.jpg' alt='Snake Plant' loading='lazy' />
+					<figcaption class='ph-label'>800 × 900</figcaption>
+				</figure>
+				<div class='card-body'>
+					<h3>Sansevieria</h3>
+					<p>Any light · Almost unkillable</p>
+					<p class='price'>€26</p>
+				</div>
+			</article>
+
+			<article class='card'>
+				<!-- IMAGE PLACEHOLDER — 800×900 -->
+				<figure class='ph ph-square'>
+					<img
+						src='images/plant-4.jpg'
+						alt='Calathea Orbifolia'
+						loading='lazy'
+					/>
+					<figcaption class='ph-label'>800 × 900</figcaption>
+				</figure>
+				<div class='card-body'>
+					<h3>Calathea Orbifolia</h3>
+					<p>Shade tolerant · Loves humidity</p>
+					<p class='price'>€42</p>
+				</div>
+			</article>
+		</div>
+
+		<p class='center'><a href='#' class='link-arrow'>See all 120 plants</a></p>
+	</div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section id='story' class='section section-tint'>
+	<div class='container split'>
+		<!-- IMAGE PLACEHOLDER — 1000×1200 -->
+		<figure class='ph ph-portrait'>
+			<img
+				src='images/story.jpg'
+				alt='Inside the Casa Verde greenhouse'
+				loading='lazy'
+			/>
+			<figcaption class='ph-label'>1000 × 1200 — story</figcaption>
+		</figure>
+
+		<div class='split-copy'>
+			<p class='eyebrow'>Our story</p>
+			<h2>A greenhouse, two people and a lot of patience</h2>
 			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+				Casa Verde began on a rooftop with a dozen cuttings and a watering can.
+				Today we grow most of what we sell in a small glasshouse just outside
+				the city — slowly, without shortcuts, so the plants that reach you are
+				already used to living indoors.
 			</p>
 			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+				Come by on a Saturday. We'll repot anything you bring, free of charge,
+				and probably send you home with a cutting.
 			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+			<a href='#visit' class='link-arrow'>Find the shop</a>
+		</div>
+	</div>
+</section>
+
+<!-- ============ CARE ============ -->
+<section id='care' class='section'>
+	<div class='container'>
+		<header class='section-head'>
+			<p class='eyebrow'>Care</p>
+			<h2>Three things, done well</h2>
+		</header>
+
+		<div class='steps'>
+			<article class='step'>
+				<span class='step-num'>01</span>
+				<h3>Light before water</h3>
+				<p>
+					Match the plant to the window. Nine problems in ten start as the wrong
+					spot, not the wrong watering can.
+				</p>
+			</article>
+			<article class='step'>
+				<span class='step-num'>02</span>
+				<h3>Water deeply, rarely</h3>
+				<p>
+					Soak until it drains, then wait until the top few centimetres are dry.
+					Roots need air as much as moisture.
+				</p>
+			</article>
+			<article class='step'>
+				<span class='step-num'>03</span>
+				<h3>Repot every second spring</h3>
+				<p>
+					Fresh peat-free mix, one size up. Bring it in and we'll do it with you
+					at the shop.
+				</p>
+			</article>
+		</div>
+	</div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<section class='quote-section'>
+	<div class='container'>
+		<blockquote>
+			“The healthiest plants I've ever brought home — and the only shop that
+			asked about my windows before selling me anything.”
+		</blockquote>
+		<p class='quote-by'>Marta L. — customer since 2021</p>
+	</div>
+</section>
+
+<!-- ============ VISIT / CTA ============ -->
+<section id='visit' class='section'>
+	<div class='container split split-reverse'>
+		<!-- IMAGE PLACEHOLDER — 1200×900 -->
+		<figure class='ph ph-landscape'>
+			<img src='images/shop.jpg' alt='Casa Verde shopfront' loading='lazy' />
+			<figcaption class='ph-label'>1200 × 900 — shopfront</figcaption>
+		</figure>
+
+		<div class='split-copy'>
+			<p class='eyebrow'>Visit us</p>
+			<h2>Carrer de les Flors 12, Barcelona</h2>
+			<p class='hours'>
+				Tuesday – Friday &nbsp;10:00 – 19:00<br />
+				Saturday &nbsp;10:00 – 15:00<br />
+				Sunday &amp; Monday &nbsp;closed
+			</p>
+			<form class='signup' onsubmit='return false;'>
+				<label for='email'>Get the seasonal care letter</label>
+				<div class='signup-row'>
+					<input
+						id='email'
+						type='email'
+						placeholder='your@email.com'
+						required
+					/>
+					<button type='submit' class='btn'>Subscribe</button>
+				</div>
+				<p class='fineprint'>One email a season. No spam, ever.</p>
+			</form>
+		</div>
+	</div>
+</section>

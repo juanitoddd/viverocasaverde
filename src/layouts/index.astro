@@ -1,0 +1,93 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Verde — Plants for a living home</title>
+  <meta name="description" content="Casa Verde is a small plant shop offering carefully grown houseplants, pots and care essentials.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="#top">
+        <span class="logo-mark" aria-hidden="true"></span>
+        Casa&nbsp;<em>Verde</em>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+      <label for="nav-toggle" class="nav-burger" aria-label="Menu"><span></span></label>
+
+      <ul class="nav-links">
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#story">Our story</a></li>
+        <li><a href="#care">Care</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+
+      <a href="#collection" class="btn btn-small">Shop plants</a>
+    </nav>
+  </header>
+
+  <main id="top">
+		<slot />
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo logo-light" href="#top">
+          <span class="logo-mark" aria-hidden="true"></span>
+          Casa&nbsp;<em>Verde</em>
+        </a>
+        <p class="footer-note">Plants for a living home.<br>Grown just outside Barcelona.</p>
+      </div>
+
+      <nav class="footer-col">
+        <h4>Shop</h4>
+        <a href="#collection">All plants</a>
+        <a href="#">Pots &amp; planters</a>
+        <a href="#">Gift cards</a>
+      </nav>
+
+      <nav class="footer-col">
+        <h4>Help</h4>
+        <a href="#care">Care guide</a>
+        <a href="#">Shipping</a>
+        <a href="#">Plant guarantee</a>
+      </nav>
+
+      <nav class="footer-col">
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="mailto:hola@casaverde.com">hola@casaverde.com</a>
+      </nav>
+    </div>
+
+    <div class="container footer-base">
+      <p>© 2026 Casa Verde. All rights reserved.</p>
+      <p><a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
