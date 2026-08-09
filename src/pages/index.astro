@@ -3,7 +3,9 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/Layout.astro';
 ---
+<Layout>
 
 <!-- ============ HERO ============ -->
 <section class='hero'>
@@ -238,3 +240,5 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		</div>
 	</div>
 </section>
+
+</Layout>
