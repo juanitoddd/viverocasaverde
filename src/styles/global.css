@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* =========================================================
    Casa Verde — landing page styles
    Brand: #68A83B (leaf)  ·  #3E7F10 (deep leaf)
@@ -27,6 +29,20 @@
   --radius-lg: 8px;
 
   --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+@theme inline {
+  --color-green: var(--green);
+  --color-green-deep: var(--green-deep);
+  --color-green-dark: var(--green-dark);
+  --color-green-tint: var(--green-tint);
+  --color-green-tint-2: var(--green-tint-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-paper: var(--paper);
+  --color-white: var(--white);
 }
 
 /* ---------- Reset ---------- */
@@ -197,8 +213,7 @@ em { font-style: italic; }
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: rgba(252, 253, 251, .88);
+  z-index: 50;  
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -238,12 +253,16 @@ em { font-style: italic; }
 }
 .nav-links a {
   font-size: .875rem;
-  color: var(--ink-soft);
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
+  /* 
+  color: var(--ink-soft);
   transition: color .2s var(--ease), border-color .2s var(--ease);
+  */
 }
-.nav-links a:hover { color: var(--green-deep); border-color: var(--green-deep); }
+.nav-links a:hover { 
+  /* color: var(--green-deep); border-color: var(--green-deep);  */
+}
 
 /* CSS-only mobile menu */
 .nav-burger { display: none; }
